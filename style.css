@@ -129,9 +129,15 @@ body {
   margin-top: 15px;
 }
 
+.created {
+  padding-top: 25px;
+}
+
 .created_card {
+  display: none;
   border: 1px solid black;
   width: 350px;
   height: 250px;
-  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
