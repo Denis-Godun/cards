@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <title>Карточки</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="header">
-        <h1 class="title">Карточки</h1>
-        <div class="buttons">
-            <button id="add_button" class="button">Добавить карточку</button>
-            <button id="delete__button" class="button">Удалить карточки</button>
-        </div>
+      <h1 class="title">Карточки</h1>
+      <div class="buttons">
+        <button id="add_button" class="button">Добавить карточку</button>
+        <button id="delete__button" class="button">Удалить карточки</button>
+      </div>
     </div>
     <main class="main">
-        <div class="created"><div class="created_card">
-            <h2 class="created_title">Создайте карточку</h2>
-            <label for="question">Вопрос</label>
-            <input type="text" id="question">
-            <label for="answer">Ответ</label>
-            <input type="text"  id="answer">
-            <button class="save">Сохранить</button>
-            <button class="close">Закрыть</button>
-        </div></div>
-        
-        <div class="container">
-        
-<div class="card"></div>
+      <div class="created">
+        <div class="created_card">
+          <h2 class="created_title">Создайте карточку</h2>
+          <label for="question">Вопрос</label>
+          <input type="text" id="question" />
+          <label for="answer">Ответ</label>
+          <input type="text" id="answer" />
+          <button class="save">Сохранить</button>
+          <button class="close">Закрыть</button>
         </div>
+      </div>
+
+      <div class="container">
+        <div class="card">
+          <div class="minus"><i class="fa-regular fa-circle-xmark"></i></div>
+          <p class="matter">Lorem ipsum dolor sit amet.</p>
+          <p class="reply">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

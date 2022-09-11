@@ -1,35 +1,45 @@
+const cardForm = document.querySelector('.created_card');
+
 document.querySelector('#add_button').onclick= () => {
-    document.querySelector('.created_card').style.display = "block";
+    cardForm.style.display = "block";
 };
 
+document.querySelector('.close').onclick = () => {
+    cardForm.style.display = "none";
+};
 
+const question = document.querySelector('#question');
+const answer = document.querySelector('#answer');
 
-
-/*let createdCard = () => {
-    const cardForm = document.createElement('div');
-    const title = document.createElement('h2');
-    const questionLabel = document.createElement('label');
-    const questionInput = document.createElement('input');
-    const answerLabel = document.createElement('label');
-    const answerInput = document.createElement('input');
-    const save = document.createElement('button');
-    const close = document.createElement('button');
-    cardForm.className='created_card';
-    title.className='created_title';
-    questionInput.id='question';
-    answerInput.id='answer';
-    save.className='save';
-    close.className='close';
-
-    answerLabel.htmlFor= answerInput;
-    questionLabel.htmlFor = questionInput;
+let createdItem = () => {
+    const item = document.createElement('div');
+    item.className = 'card';
+    const div = document.createElement('div');
+    div.className = 'minus';
+    const close = document.createElement('i');
+    close.className = 'fa-regular fa-circle-xmark';
     
-    title.textContent ='Создайте карточку';
-    answerLabel.textContent = 'Ответ';
-    questionLabel.textContent = 'Вопрос';
-    save.textContent = 'Сохранить';
-    close.textContent = 'Закрыть';
+    const matter = document.createElement('p');
+    matter.className = 'matter';
+    matter.textContent = question.value;
+    const reply = document.createElement('p');
+    reply.className = 'reply';
+    reply.textContent = answer.value;
+reply.style.visibility = 'hidden';
+    div.appendChild(close);
+    //закончил здесь. появление и счезновение ответа
+    item.onclick = () => {
+reply.style.visibility = 'visible';
+    };
 
-    cardForm.append(title,questionLabel,questionInput,answerLabel,answerInput,save,close);
-    document.querySelector('.created_card').append(cardForm);
-};*/
+    close.onclick = () => {
+       item.remove();
+    }
+    document.querySelector('.container').appendChild(item);
+
+   
+};
+
+document.querySelector('.save').onclick = () => {
+    createdItem();
+};
