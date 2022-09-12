@@ -1,45 +1,46 @@
-const cardForm = document.querySelector('.created_card');
+const cardForm = document.querySelector(".created_card");
 
-document.querySelector('#add_button').onclick= () => {
-    cardForm.style.display = "block";
+document.querySelector("#add_button").onclick = () => {
+  cardForm.style.display = "block";
 };
 
-document.querySelector('.close').onclick = () => {
-    cardForm.style.display = "none";
+document.querySelector("#delete_button").onclick = () => {
+    document.getElementById('container').innerHTML = "";
+  };
+document.querySelector(".close").onclick = () => {
+  cardForm.style.display = "none";
 };
 
-const question = document.querySelector('#question');
-const answer = document.querySelector('#answer');
+const question = document.querySelector("#question");
+const answer = document.querySelector("#answer");
 
 let createdItem = () => {
-    const item = document.createElement('div');
-    item.className = 'card';
-    const div = document.createElement('div');
-    div.className = 'minus';
-    const close = document.createElement('i');
-    close.className = 'fa-regular fa-circle-xmark';
-    
-    const matter = document.createElement('p');
-    matter.className = 'matter';
-    matter.textContent = question.value;
-    const reply = document.createElement('p');
-    reply.className = 'reply';
-    reply.textContent = answer.value;
-reply.style.visibility = 'hidden';
-    div.appendChild(close);
-    //закончил здесь. появление и счезновение ответа
-    item.onclick = () => {
-reply.style.visibility = 'visible';
-    };
+  const item = document.createElement("div");
+  item.className = "card";
+  const div = document.createElement("div");
+  div.className = "minus";
+  const close = document.createElement("i");
+  close.className = "fa-regular fa-circle-xmark";
 
-    close.onclick = () => {
-       item.remove();
-    }
-    document.querySelector('.container').appendChild(item);
-
-   
+  const matter = document.createElement("p");
+  matter.className = "matter";
+  matter.textContent = question.value;
+  const reply = document.createElement("p");
+  reply.className = "reply";
+  reply.textContent = answer.value;
+  div.appendChild(close);
+  close.onclick = () => {
+    item.remove();
+  };
+  item.append(div, matter, reply);
+  item.onclick = () => {
+    reply.classList.toggle("reply_show");
+  };
+  document.querySelector(".container").appendChild(item);
 };
 
-document.querySelector('.save').onclick = () => {
-    createdItem();
+document.querySelector(".save").onclick = () => {
+  createdItem();
+  question.value = "";
+  answer.value = "";
 };

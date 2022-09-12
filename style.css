@@ -134,7 +134,7 @@ body {
 }
 
 .created_card {
-  display: none;
+  display: block;
   border: 1px solid black;
   width: 350px;
   height: 250px;
@@ -142,6 +142,46 @@ body {
   margin-right: auto;
 }
 
+.created_title {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 20px;
+}
+
+.form {
+  font-size: 20px;
+  border-radius: 5px;
+  height: 25px;
+  width: 95%;
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+.form:focus {
+  border: 2px solid black;
+}
+
+.create_button {
+  margin-top: 15px;
+  width: 150px;
+  margin-left: 15px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.create_button:hover {
+  background: white;
+}
+
 .reply {
+  visibility: hidden;
+}
+
+.reply_show {
   visibility: visible;
 }
