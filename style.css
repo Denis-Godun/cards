@@ -85,7 +85,7 @@ body {
   height: 120px;
   padding-top: 25px;
 }
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 480px) {
   .header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -94,7 +94,6 @@ body {
     margin-left: 33%;
   }
 }
-
 .title {
   font-size: 35px;
 }
@@ -111,7 +110,6 @@ body {
     margin-right: 30px;
   }
 }
-
 .button:hover {
   background: #d3d3d3;
 }
@@ -135,9 +133,14 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 480px) {
   .container {
-    max-width: 540px;
+    max-width: 480px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 767px;
   }
 }
 
