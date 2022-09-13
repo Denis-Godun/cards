@@ -85,15 +85,16 @@ body {
   height: 120px;
   padding-top: 25px;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   .header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-left: 33%;
+    margin-left: 30%;
   }
 }
+
 .title {
   font-size: 35px;
 }
@@ -107,9 +108,10 @@ body {
 }
 @media screen and (max-width: 540px) {
   .button {
-    margin-right: 30px;
+    margin-right: 35px;
   }
 }
+
 .button:hover {
   background: #d3d3d3;
 }
@@ -133,14 +135,9 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   .container {
-    max-width: 480px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .container {
-    max-width: 767px;
+    max-width: 540px;
   }
 }
 
@@ -155,6 +152,11 @@ body {
   height: 250px;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-width: 540px) {
+  .created_card {
+    margin-left: auto;
+  }
 }
 
 .created_title {

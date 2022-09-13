@@ -10,16 +10,16 @@ body {
   max-width: 100%;
   height: 120px;
   padding-top: 25px;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 540px) {
     flex-direction: column;
-    margin-left: 33%;
+    margin-left: 30%;
+    
     }
-    @media screen and (max-width: 767px) {
-      }
 }
 .title {
   font-size: 35px;
 }
+
 .button {
   width: 80px;
   height: 45px;
@@ -27,11 +27,9 @@ body {
   border: 1px solid red;
   border-radius: 15px;
   @media screen and (max-width: 540px) {
-    margin-right: 30px;
+   margin-right: 35px;
     }
-    @media screen and (max-width: 767px) {
-
-      }
+  
 }
 .button:hover {
   background: #d3d3d3;
@@ -49,12 +47,9 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  @media screen and (max-width: 480px) {
-    max-width: 480px;
-    }
-    @media screen and (max-width: 767px) {
-      max-width: 767px;
-      }
+  @media screen and (max-width: 540px) {
+    max-width: 540px;
+     }
 }
 
 .created {
@@ -67,6 +62,9 @@ body {
   height: 250px;
   margin-left: auto;
   margin-right: auto;
+  @media screen and (max-width: 540px) {
+    margin-left:auto;
+     }
 }
 .created_title{
 text-align: center;
