@@ -85,27 +85,32 @@ body {
   height: 120px;
   padding-top: 25px;
 }
-@media screen and (max-width: 540px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
   .header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-left: 30%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-left: 35%;
   }
 }
 
 .title {
   font-size: 35px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .title {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 
 .button {
@@ -139,6 +144,36 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .container {
+    max-width: 300px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .container {
+    max-width: 460px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 768px) {
+  .container {
+    max-width: 620px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 979px) {
+  .container {
+    max-width: 749px;
+  }
+}
+@media screen and (min-width: 980px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    min-width: 1180px;
+  }
+}
 
 .created {
   padding-top: 25px;
@@ -151,6 +186,12 @@ body {
   height: 250px;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .created_card {
+    max-width: 300px;
+    max-height: 220px;
+  }
 }
 
 .created_title {
@@ -183,6 +224,12 @@ label {
   margin-left: 15px;
   height: 30px;
   border-radius: 5px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .create_button {
+    width: 100px;
+    margin-top: 0px;
+  }
 }
 
 .create_button:hover {

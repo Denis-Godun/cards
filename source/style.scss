@@ -10,26 +10,29 @@ body {
   max-width: 100%;
   height: 120px;
   padding-top: 25px;
-  @media screen and (max-width: 540px) {
+  @media screen and (min-width: 320px) and (max-width: 480px) {
     flex-direction: column;
-    margin-left: 30%;
-    }
-    @media screen and (max-width: 768px) {
-      flex-direction: column;
-      margin-left: 35%;
-      
-      }
+  }
 }
 .title {
   font-size: 35px;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    text-align: center;
+  }
 }
-
+.buttons{
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    display: flex;
+    justify-content: space-around;
+  }
+}
 .button {
   width: 80px;
   height: 45px;
   background: #e9e9e9;
   border: 1px solid red;
   border-radius: 15px;
+  
 }
 .button:hover {
   background: #d3d3d3;
@@ -47,6 +50,24 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    max-width: 300px; 
+  }
+  @media screen and (min-width: 481px) and (max-width: 767px) {
+    max-width: 460px;
+  }
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    max-width: 620px;
+  }
+  @media screen and (min-width: 769px) and (max-width: 979px) {
+    max-width: 749px;
+  }
+  @media screen and (min-width: 980px) and (max-width: 1199px) {
+    max-width: 960px;
+  }
+  @media screen and (min-width: 1200px) {
+    min-width: 1180px;
+  }
 }
 
 .created {
@@ -59,83 +80,89 @@ body {
   height: 250px;
   margin-left: auto;
   margin-right: auto;
-}
-.created_title{
-text-align: center;
-font-size: 25px;
-padding-top: 10px;
-margin-bottom: 20px;
-};
-label{
-    font-size: 20px;
-   
-}
-.form{
-    font-size:20px;
-    border-radius: 5px;
-    height: 25px;
-    width: 95%;
-   margin-left: 5px;
-   margin-bottom: 15px
-
-};
-.form:focus{
-border: 2px solid black;
-};
- .create_button{
-    margin-top: 15px;
-    width: 150px;
-    margin-left: 15px;
-    height: 30px;
-    border-radius: 5px;
- };
- .create_button:hover{
-    background: white;
- };
-
- .card {
-    border: 1px solid black;
-    box-shadow:0 0 5px #000;
-    width: 350px;
-    height: 200px;
-    margin-top: 15px;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+     max-width: 300px;
+     max-height: 220px;
   }
+}
+.created_title {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+label {
+  font-size: 20px;
+}
+.form {
+  font-size: 20px;
+  border-radius: 5px;
+  height: 25px;
+  width: 95%;
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+.form:focus {
+  border: 2px solid black;
+}
+.create_button {
+  margin-top: 15px;
+  width: 150px;
+  margin-left: 15px;
+  height: 30px;
+  border-radius: 5px;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+   width: 100px;
+   margin-top: 0px;
+  }
+}
+.create_button:hover {
+  background: white;
+}
 
-  .header_card{
-    display: flex;
-    justify-content:space-between;
-    border-bottom: 2px solid black;
-    height: 25px;
-  };
-.answer_show{
+.card {
+  border: 1px solid black;
+  box-shadow: 0 0 5px #000;
+  width: 350px;
+  height: 200px;
+  margin-top: 15px;
+}
+
+.header_card {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  height: 25px;
+}
+.answer_show {
   border-radius: 5px;
   margin-left: 5px;
   background-color: #d3d3d3;
-};
-.answer_show:hover{
+}
+.answer_show:hover {
   color: green;
-};
-  .fa-circle-xmark{
-    font-size: 20px;
-    margin-top: 2px;
-    margin-right: 5px;
-  };
-  .fa-circle-xmark:hover{
-    cursor: pointer;
-    color: red;
-  }
-   .matter{
-    padding-top: 5px;
-    padding-left: 5px;
-    word-break: break-all;
-    border-bottom: 2px solid black;
-   }
+}
+.fa-circle-xmark {
+  font-size: 20px;
+  margin-top: 2px;
+  margin-right: 5px;
+}
+.fa-circle-xmark:hover {
+  cursor: pointer;
+  color: red;
+}
+.matter {
+  padding-top: 5px;
+  padding-left: 5px;
+  word-break: break-all;
+  border-bottom: 2px solid black;
+}
 .reply {
   visibility: hidden;
 }
 .reply_show {
   visibility: visible;
   padding-top: 5px;
-    padding-left: 5px;
-    word-break: break-all;
+  padding-left: 5px;
+  word-break: break-all;
 }
