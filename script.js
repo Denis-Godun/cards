@@ -1,12 +1,21 @@
+let contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+
 const cardForm = document.querySelector(".created_card");
+
+document.querySelector(".save").onclick = () => {
+  addFlashcard()
+};
+
+document.querySelector("#delete_button").onclick = () => {
+  localStorage.clear();
+  document.getElementById("container").innerHTML = "";
+  contentArray = [];
+};
 
 document.querySelector("#add_button").onclick = () => {
   cardForm.style.display = "block";
 };
 
-document.querySelector("#delete_button").onclick = () => {
-  document.getElementById("container").innerHTML = "";
-};
 document.querySelector(".close").onclick = () => {
   cardForm.style.display = "none";
 };
@@ -14,7 +23,7 @@ document.querySelector(".close").onclick = () => {
 const question = document.querySelector("#question");
 const answer = document.querySelector("#answer");
 
-let createdItem = () => {
+let createdItem = (text, delThisIndex) => {
   const item = document.createElement("div");
   item.className = "card";
   const div = document.createElement("div");
@@ -27,10 +36,10 @@ let createdItem = () => {
 
   const matter = document.createElement("p");
   matter.className = "matter";
-  matter.textContent = question.value;
+  matter.textContent = text.my_question;
   const reply = document.createElement("p");
   reply.className = "reply";
-  reply.textContent = answer.value;
+  reply.textContent = text.my_answer;
   div.append(answerShow, close);
   close.onclick = () => {
     item.remove();
@@ -42,8 +51,20 @@ let createdItem = () => {
   document.querySelector(".container").appendChild(item);
 };
 
-document.querySelector(".save").onclick = () => {
-  createdItem();
+contentArray.forEach(createdItem);
+
+addFlashcard = () => {
+  const question = document.querySelector("#question");
+  const answer = document.querySelector("#answer");
+
+  let flashcard_info = {
+    'my_question' : question.value,
+    'my_answer'  : answer.value
+  }
+
+  contentArray.push(flashcard_info);
+  localStorage.setItem('items', JSON.stringify(contentArray));
+  createdItem(contentArray[contentArray.length - 1], contentArray.length - 1);
   question.value = "";
   answer.value = "";
-};
+}
