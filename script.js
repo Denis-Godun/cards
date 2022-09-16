@@ -57,6 +57,7 @@ let createdItem = (text, delThisIndex) => {
 
   //добавляем клик на кнопку закрытия айтема
   close.onclick = () => {
+    //удаляем один айтем по текущему индексу
     contentArray.splice(delThisIndex, 1);
     localStorage.setItem("items", JSON.stringify(contentArray));
     window.location.reload();
@@ -66,23 +67,31 @@ let createdItem = (text, delThisIndex) => {
   answerShow.onclick = () => {
     reply.classList.toggle("reply_show");
   };
+  //добавляем айтем в блок с карточками
   document.querySelector(".container").appendChild(item);
 };
 
+//пробегаемся по массиву
 contentArray.forEach(createdItem);
 
+
 addFlashcard = () => {
+  //находим поля ввода вопроса и ответа
   const question = document.querySelector("#question");
   const answer = document.querySelector("#answer");
 
+  //создаём обьект с ними
   let flashcard_info = {
     my_question: question.value,
     my_answer: answer.value,
   };
-
+//пушим обьект в массив
   contentArray.push(flashcard_info);
+  //получаем массив в localStorage и преобразуем его в строку
   localStorage.setItem("items", JSON.stringify(contentArray));
+  //вызываем функцию с переданными параметрами
   createdItem(contentArray[contentArray.length - 1], contentArray.length - 1);
+  //очищаем поля ввода
   question.value = "";
   answer.value = "";
 };
