@@ -120,7 +120,7 @@ label {
   background: white;
 }
 
-.card {
+.card, .card_back {
   border: 1px solid black;
   box-shadow: 0 0 5px #000;
   width: 350px;
@@ -128,16 +128,19 @@ label {
   margin-top: 15px;
 }
 
-.header_card {
+.header_card, .header_back {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid black;
   height: 25px;
 }
-.answer_show {
+.answer_show, .questiob_show {
   border-radius: 5px;
   margin-left: 5px;
   background-color: #d3d3d3;
+}
+.questiob_show:hover{
+  color: green;
 }
 .answer_show:hover {
   color: green;

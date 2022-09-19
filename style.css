@@ -236,7 +236,7 @@ label {
   background: white;
 }
 
-.card {
+.card, .card_back {
   border: 1px solid black;
   -webkit-box-shadow: 0 0 5px #000;
           box-shadow: 0 0 5px #000;
@@ -245,7 +245,7 @@ label {
   margin-top: 15px;
 }
 
-.header_card {
+.header_card, .header_back {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -256,10 +256,14 @@ label {
   height: 25px;
 }
 
-.answer_show {
+.answer_show, .questiob_show {
   border-radius: 5px;
   margin-left: 5px;
   background-color: #d3d3d3;
+}
+
+.questiob_show:hover {
+  color: green;
 }
 
 .answer_show:hover {

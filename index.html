@@ -24,19 +24,35 @@
         <div class="created_card">
           <h2 class="created_title">Создайте карточку</h2>
           <label for="question">Вопрос:</label>
-          <br>
-          <input type="text" id="question" class="form"/>
-          <br>
+          <br />
+          <input type="text" id="question" class="form" />
+          <br />
           <label for="answer">Ответ:</label>
-          <br>
+          <br />
           <input type="text" id="answer" class="form" />
-          <br>
+          <br />
           <button class="save create_button">Сохранить</button>
           <button class="close create_button">Закрыть</button>
         </div>
       </div>
 
       <div class="container" id="container">
+        <template id="cards"
+          ><div class="card">
+            <div class="header_card">
+              <button class="answer_show">Ответ</button>
+              <i class="fa-regular fa-circle-xmark"></i>
+            </div>
+            <p class="matter"></p></div
+        ></template>
+        <template id="card_back"
+          ><div class="card_back">
+            <div class="header_back">
+              <button class="questiob_show">Вопрос</button>
+              <i class="fa-regular fa-circle-xmark"></i>
+            </div>
+            <p class="reply"></p></div
+        ></template>
       </div>
     </main>
     <script src="script.js"></script>
