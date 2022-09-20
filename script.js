@@ -44,16 +44,30 @@ let createdItem = (text, delThisIndex) => {
   answerShow.className = "answer_show";
   answerShow.textContent = "Ответ";
 
-  const matter = document.createElement("p");
+  const matter = document.createElement("h1");
   matter.className = "matter";
   matter.textContent = text.my_question;
-  const reply = document.createElement("p");
+  
+  const reply = document.createElement("h1");
   reply.className = "reply";
   reply.textContent = text.my_answer;
+
+  const front = document.createElement("div");
+  front.className = "front";
+  front.style.transform = "transform: perspective(600px) rotateY(0deg)";
+  const back = document.createElement("div");
+  back.className = "back";
+  back.style.transform = "transform: perspective(600px) rotateY(180deg)";
   
+  
+
   //добавляем кнопки элементы в айтем
+  front.appendChild(matter);
+  back.appendChild(reply);
+  
+  
   div.append(answerShow, close);
-  item.append(div, matter, reply);
+  item.append(div,front,back);
 
   //добавляем клик на кнопку закрытия айтема
   close.onclick = () => {
@@ -65,7 +79,10 @@ let createdItem = (text, delThisIndex) => {
 
   
   answerShow.onclick = () => {
-    reply.classList.toggle("reply_show");
+    front.style.transform = "perspective(600px) rotateY(-180deg)";
+    
+   
+    
   };
   //добавляем айтем в блок с карточками
   document.querySelector(".container").appendChild(item);

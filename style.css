@@ -262,7 +262,7 @@ label {
   background-color: #d3d3d3;
 }
 
-.questiob_show:hover {
+.questio_show:hover {
   color: green;
 }
 
@@ -281,20 +281,43 @@ label {
   color: red;
 }
 
-.matter {
+.front,
+.back {
+  width: 350px;
+  height: 175px;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.6s linear;
+  transition: -webkit-transform 0.6s linear;
+  transition: transform 0.6s linear;
+  transition: transform 0.6s linear, -webkit-transform 0.6s linear;
+  position: absolute;
+}
+
+.front {
+  -webkit-transform: perspective(600px) rotateY(0deg);
+          transform: perspective(600px) rotateY(0deg);
+}
+
+.back {
+  -webkit-transform: perspective(600px) rotateY(180deg);
+          transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover > .front {
+  -webkit-transform: perspective(600px) rotateY(-180deg);
+          transform: perspective(600px) rotateY(-180deg);
+}
+
+.card:hover > .back {
+  -webkit-transform: perspective(600px) rotateY(0deg);
+          transform: perspective(600px) rotateY(0deg);
+}
+
+.matter, .reply {
   padding-top: 5px;
   padding-left: 5px;
   word-break: break-all;
-  border-bottom: 2px solid black;
-}
-
-.reply {
-  visibility: hidden;
-}
-
-.reply_show {
-  visibility: visible;
-  padding-top: 5px;
-  padding-left: 5px;
-  word-break: break-all;
+  text-align: center;
 }
