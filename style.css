@@ -299,6 +299,7 @@ label {
 
 .front,
 .back {
+  text-align: center;
   width: 350px;
   height: 175px;
   overflow: hidden;
@@ -333,5 +334,4 @@ label {
 .reply {
   padding: 5px;
   word-break: normal;
-  text-align: center;
 }
