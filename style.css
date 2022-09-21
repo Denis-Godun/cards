@@ -236,8 +236,7 @@ label {
   background: white;
 }
 
-.card,
-.card_back {
+.card {
   border: 1px solid black;
   -webkit-box-shadow: 0 0 5px #000;
           box-shadow: 0 0 5px #000;
@@ -310,6 +309,12 @@ label {
   transition: transform 0.6s linear;
   transition: transform 0.6s linear, -webkit-transform 0.6s linear;
   position: absolute;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .front,
+.back {
+    width: 300px;
+  }
 }
 
 .front,
