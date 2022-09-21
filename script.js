@@ -42,10 +42,10 @@ let createdItem = (text, delThisIndex) => {
   close.className = "fa-regular fa-circle-xmark";
   const answerShow = document.createElement("button");
   answerShow.className = "answer_show";
-  answerShow.textContent = "К ответу";
+  answerShow.textContent = "Посмотреть ответ";
   const questionShow = document.createElement("button");
   questionShow.className = "question_show";
-  questionShow.textContent = "К вопросу";
+  questionShow.textContent = "Посмотреть вопрос";
 
   const matter = document.createElement("h1");
   matter.className = "matter";
