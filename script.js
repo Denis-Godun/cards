@@ -42,32 +42,29 @@ let createdItem = (text, delThisIndex) => {
   close.className = "fa-regular fa-circle-xmark";
   const answerShow = document.createElement("button");
   answerShow.className = "answer_show";
-  answerShow.textContent = "Ответ";
+  answerShow.textContent = "К ответу";
+  const questionShow = document.createElement("button");
+  questionShow.className = "question_show";
+  questionShow.textContent = "К вопросу";
 
   const matter = document.createElement("h1");
   matter.className = "matter";
   matter.textContent = text.my_question;
-  
+
   const reply = document.createElement("h1");
   reply.className = "reply";
   reply.textContent = text.my_answer;
 
   const front = document.createElement("div");
   front.className = "front";
-  front.style.transform = "transform: perspective(600px) rotateY(0deg)";
   const back = document.createElement("div");
   back.className = "back";
-  back.style.transform = "transform: perspective(600px) rotateY(180deg)";
-  
-  
-
   //добавляем кнопки элементы в айтем
   front.appendChild(matter);
   back.appendChild(reply);
-  
-  
-  div.append(answerShow, close);
-  item.append(div,front,back);
+
+  div.append(answerShow, questionShow, close);
+  item.append(div, front, back);
 
   //добавляем клик на кнопку закрытия айтема
   close.onclick = () => {
@@ -77,12 +74,17 @@ let createdItem = (text, delThisIndex) => {
     window.location.reload();
   };
 
-  
   answerShow.onclick = () => {
     front.style.transform = "perspective(600px) rotateY(-180deg)";
-    
-   
-    
+    back.style.transform = "perspective(600px) rotateY(0deg)";
+    answerShow.style.transform = "perspective(600px) rotateY(-180deg)";
+    questionShow.style.transform = "perspective(600px) rotateY(0deg)";
+  };
+  questionShow.onclick = () => {
+    front.style.transform = "perspective(600px) rotateY(0deg)";
+    back.style.transform = "perspective(600px) rotateY(-180deg)";
+    answerShow.style.transform = "perspective(600px) rotateY(0deg)";
+    questionShow.style.transform = "perspective(600px) rotateY(-180deg)";
   };
   //добавляем айтем в блок с карточками
   document.querySelector(".container").appendChild(item);
@@ -90,7 +92,6 @@ let createdItem = (text, delThisIndex) => {
 
 //пробегаемся по массиву
 contentArray.forEach(createdItem);
-
 
 addFlashcard = () => {
   //находим поля ввода вопроса и ответа
@@ -102,7 +103,7 @@ addFlashcard = () => {
     my_question: question.value,
     my_answer: answer.value,
   };
-//пушим обьект в массив
+  //пушим обьект в массив
   contentArray.push(flashcard_info);
   //получаем массив в localStorage и преобразуем его в строку
   localStorage.setItem("items", JSON.stringify(contentArray));
